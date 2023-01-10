@@ -158,4 +158,22 @@ export default createGlobalStyle`
   margin-bottom: 20px !important;
  }
 
+ .ant-modal-body{
+  height: 60vh;
+  width: 67vh;
+  margin-right: 10vh !important;
+  padding-right: 10px;
+  overflow-x: hidden;
+ }
+
+ .ant-modal-content{
+  align-items: center;
+  width: 70vh;
+ }
+
+ .ant-modal-wrap{
+    padding-right: 12vh;
+
+ }
+
 `;

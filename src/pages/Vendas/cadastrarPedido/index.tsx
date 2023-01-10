@@ -84,13 +84,14 @@ const CadastrarPedido: React.FC = () => {
             </Button>
 
             <Modal
-              width={800}
               title="INSIRA OS DADOS DO CLIENTE"
               open={open}
               onOk={handleOk}
               confirmLoading={confirmLoading}
               onCancel={handleCancel}
               okText="Salvar"
+              cancelText="Cancelar"
+              
               
             >
 
