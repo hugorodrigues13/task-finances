@@ -1,107 +1,147 @@
-import { Button, Row, Select } from "antd";
+import { Button, Col, Form, Row, Select, Tooltip } from "antd";
+import FormItem from "antd/es/form/FormItem";
 import Input from "antd/es/input/Input";
 import { Option } from "antd/es/mentions";
-import { Plus } from "phosphor-react";
+import { Plus, Trash, TrashSimple } from "phosphor-react";
 import React, { ReactNode, useState } from "react";
 import { Container } from "./styles";
 
   
 const PessoaFisica: React.FC = () => {
   const [item, setItem] = useState('');
-  const [itemList, setItemList] = useState([""])
+  const [phones, setPhones] = useState([""])
   const [escondeButton, setEscondeButton] = useState(false)
 
   const addItem = () => {
-    setItemList([...itemList, ""])
+    setPhones([...phones, ""])
 }
+
+  const handleChangePhone = (e: any, index: any) => {
+      phones[index] = e.target.value;
+      setPhones([...phones])
+  }
+
+  const handleRemovePhone = (position: any) => {
+    setPhones([...phones.filter((_, index) => index !== position)])
+
+  }
 
     return (
       <Container>
-          <div className="div-form">
-            <h1>CPF</h1>
-            <Input className="input-medio"/>
-          </div>
-          <div className="div-form">
-            <h1>Nome</h1>
+          <Row className="div-form">
+            <Form.Item className="form-item">
+              <Col>CPF</Col>
+              <Input className="input-medio"/>
+            </Form.Item>
+          </Row>
+          <Row className="div-form">
+          <Form.Item className="form-item">
+            <Col>Nome</Col>
             <Input className="input-grande"/>
-          </div>
+          </Form.Item>
+          </Row>
           <Row gutter={24}>
             {
-              itemList.map((itemlista, index) => (
-                <div key={index} className="div-telefone">
-                  <h1>Telefone</h1>
-                  <Input className="input-telefone" value={item} name="item" onChange = {e => setItem(e.target.value)}/>
-                </div>
+              phones.map((phone, index) => (
+              <Row key={index} className="div-telefone">
+                <Form.Item className="form-item">
+                  <Col>{`Telefone ${index + 1}`}</Col>
+                  <Input
+                    type="text"
+                    id={`phone-${index + 1}`}
+                    className="input-telefone"
+                    placeholder={`Informe o telefone`} 
+                    value={phone} 
+                    name="phone" 
+                    suffix={<Tooltip title="Deletar"><TrashSimple size={16} className="delete-phone" onClick={() => {handleRemovePhone(index)}}/></Tooltip>}
+                    onChange = {e => handleChangePhone(e, index)}/>
+                  </Form.Item>
+                </Row>
               ))
             }
-            <div className="div-button-add">
+            <Row className="div-button-add">
              <Button 
                 className="button-add" 
                 onClick={addItem}
                 icon={<Plus size={18} className="icon-add"/>}
                 
                 >adicionar novo numero</Button>
-              </div> 
+              </Row> 
           </Row>
           
-          <div className="div-email">
-            <h1>E-mail</h1>
+          <Row className="div-email">
+          <Form.Item className="form-item">
+            <Col>E-mail</Col>
             <Input className="input-grande"/>
-            
-          </div>
+          </Form.Item>
+          </Row>
 
           {/*------------ ENDEREÇO ----------------*/}
 
           <Row className="row-endereco">
             {
-               itemList.map((itemlista, index) => (
+               phones.map((phone, index) => (
                 <>
-            <div className="sub-div-endereco">
-              <h1>Endereço Principal</h1>
+            <Row className="div-form">
+            <Form.Item className="form-item">
+              <Col>Endereço Principal</Col>
               <Input className="input-endereco"/>
-            </div>
-            <div className="sub-div-endereco">
-              <h1>N°</h1>
+            </Form.Item>
+            </Row>
+            <Row className="div-form">
+            <Form.Item className="form-item">
+              <Col>N°</Col>
               <Input className="input-numero"/>
-            </div>
-            <div className="sub-div-endereco">
-                <h1>Bairro</h1>
+            </Form.Item>
+            </Row>
+            <Row className="div-form">
+            <Form.Item className="form-item">
+                <Col>Bairro</Col>
                 <Input className="input-bairro"/>
-            </div>
+            </Form.Item>
+            </Row>
             <Row className="row-endereco">
-            <div className="sub-div-endereco">
-              <h1>Cidade</h1>
-              <Input className="input-endereco"/>
-            </div>
-            <div className="sub-div-endereco">
-              <h1>Estado</h1>
-              <Select defaultValue="Option1" className="input-estado">
-                <Option value="Option1">Option1</Option>
-                <Option value="Option2">Option2</Option>
-              </Select>
-            </div>
-            <div className="sub-div-endereco">
-                <h1>CEP</h1>
-                <Input className="input-cep"/>
-            </div>
-            <div className="sub-div-complemento">
-                <h1>Complemento</h1>
-                <Input className="input-grande"/>
-            </div>
+              <Row className="div-form">
+              <Form.Item className="form-item">
+                <Col>Cidade</Col>
+                <Input className="input-endereco"/>
+              </Form.Item>
+              </Row>
+              <Row className="div-form">
+              <Form.Item className="form-item">
+                <Col>Estado</Col>
+                <Select defaultValue="Option1" className="input-estado">
+                  <Option value="Option1">Option1</Option>
+                  <Option value="Option2">Option2</Option>
+                </Select>
+              </Form.Item>
+              </Row>
+              <Row className="div-form">
+              <Form.Item className="form-item">
+                  <Col>CEP</Col>
+                  <Input className="input-cep"/>
+              </Form.Item>
+              </Row>
+              <Row className="div-form">
+              <Form.Item className="form-item">
+                  <Col>Complemento</Col>
+                  <Input className="input-grande"/>
+              </Form.Item>
+              </Row>
           </Row>
          
                 </>
               ))
             }
 
-        <div className="div-button-add">
+        <Row className="div-button-add">
              <Button 
                 className="button-add" 
                 onClick={addItem}
                 icon={<Plus size={18} className="icon-add"/>}
                 
                 >adicionar novo endereco</Button>
-              </div> 
+              </Row> 
           </Row>
 
          

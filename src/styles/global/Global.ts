@@ -131,7 +131,7 @@ export default createGlobalStyle`
   margin-top: 50px;
   width: 140px;
   justify-content: center;
-  background-color: #B5334D;
+  background-color: #388862;
  }
 
  .ant-btn-default{

@@ -6,16 +6,21 @@ export const Container = styled.div`
   flex-direction: column;
 
   .row-endereco{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     height: 100px;
+  }
+
+  .form-item{
+    display: flex;
+    margin: 0;
+    flex-direction: column;
   }
 
 .div-form{
         display: flex;
-        justify-content: center;
-        align-items: left;
-        margin-bottom: 20px;
         flex-direction: column;
+        align-items: left;
+        margin-bottom: 10px;
   }
 
   .input-grande{
@@ -57,16 +62,16 @@ export const Container = styled.div`
     width: 12.5vh;
   }
 
-  h1{
+  label{
       font-size: 14px;
+      flex-direction: column;
       margin-right: 10px;
     }
 
 .div-email{
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .input-email{
@@ -99,18 +104,30 @@ export const Container = styled.div`
 }
 
 .sub-div-complemento{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   height: 40px;
 }
 
 .div-telefone{
+  display: flex;
+  flex-direction: column;
   padding-left: 12px;
   height: 70px;
 }
 
 .input-telefone{
   width: 20.3vh;
+}
+
+.delete-phone{
+  cursor: pointer;
+
+  :hover{
+    color: #B5334D;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
 }
 
 `;
