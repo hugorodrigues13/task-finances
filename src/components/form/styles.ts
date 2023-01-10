@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   .row-endereco{
     margin-bottom: 20px;
+    height: 100px;
   }
 
 .div-form{
@@ -18,14 +19,15 @@ export const Container = styled.div`
   }
 
   .input-grande{
+    width: 63.5vh;
   }
 
   .input-medio{
-    width: 50%;
+    width: 20.3vh;
   }
 
   .input-pequeno{
-    width: 40%;
+    width: 30%;
   }
 
   .input-extra-pequeno {
@@ -33,26 +35,26 @@ export const Container = styled.div`
   }
 
   .input-endereco{
-    width: 442px;
-    margin-right: 20px;
+    width: 31vh;
+    margin-right: 50px;
   }
 
   .input-numero{
-    width: 70px;
-    margin-right: 20px;
+    width: 7vh;
+    margin-right: 50px;
   }
 
   .input-bairro{
-    width: 200px;
+    width: 15.5vh;
   }
 
   .input-estado{
-    width: 100px;
-    margin-right: 20px;
+    width: 10vh;
+    margin-right: 50px;
   }
 
   .input-cep{
-    width: 170px;
+    width: 12.5vh;
   }
 
   h1{
@@ -63,21 +65,21 @@ export const Container = styled.div`
 .div-email{
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .input-email{
-  width: 372px;
+  width: 31vh;
 }
 
-.button-add-email{
+.button-add{
   display: flex;
-  justify-content: center !important;
-  align-items: center !important;
   padding: 0;
-  margin-top: 22px !important;
+  align-items: center;
+  justify-content: center;
   margin-left: 10px;
+  margin-top: 0;
   width: 180px;
   border: none;
   background-color: none;
@@ -85,8 +87,30 @@ export const Container = styled.div`
   color: #00C0EF;
 }
 
+.div-button-add{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .icon-add{
   margin-right: 5px;
+  height: 30px;
+}
+
+.sub-div-complemento{
+  margin-bottom: 20px;
+
+  height: 40px;
+}
+
+.div-telefone{
+  padding-left: 12px;
+  height: 70px;
+}
+
+.input-telefone{
+  width: 20.3vh;
 }
 
 `;

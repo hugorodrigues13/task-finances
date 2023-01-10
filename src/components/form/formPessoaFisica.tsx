@@ -8,7 +8,8 @@ import { Container } from "./styles";
   
 const PessoaFisica: React.FC = () => {
   const [item, setItem] = useState('');
-  const [itemList, setItemList] = useState([""])  
+  const [itemList, setItemList] = useState([""])
+  const [escondeButton, setEscondeButton] = useState(false)
 
   const addItem = () => {
     setItemList([...itemList, ""])
@@ -27,21 +28,23 @@ const PessoaFisica: React.FC = () => {
           <Row gutter={24}>
             {
               itemList.map((itemlista, index) => (
-                <div key={index} className="div-email">
+                <div key={index} className="div-telefone">
                   <h1>Telefone</h1>
-                  <Input className="input-email" value={item} name="item" onChange = {e => setItem(e.target.value)}/>
+                  <Input className="input-telefone" value={item} name="item" onChange = {e => setItem(e.target.value)}/>
                 </div>
               ))
             }
+            <div className="div-button-add">
              <Button 
-                className="button-add-email" 
+                className="button-add" 
                 onClick={addItem}
                 icon={<Plus size={18} className="icon-add"/>}
                 
                 >adicionar novo numero</Button>
+              </div> 
           </Row>
           
-          <div className="div-form">
+          <div className="div-email">
             <h1>E-mail</h1>
             <Input className="input-grande"/>
             
@@ -50,6 +53,9 @@ const PessoaFisica: React.FC = () => {
           {/*------------ ENDEREÇO ----------------*/}
 
           <Row className="row-endereco">
+            {
+               itemList.map((itemlista, index) => (
+                <>
             <div className="sub-div-endereco">
               <h1>Endereço Principal</h1>
               <Input className="input-endereco"/>
@@ -62,9 +68,7 @@ const PessoaFisica: React.FC = () => {
                 <h1>Bairro</h1>
                 <Input className="input-bairro"/>
             </div>
-          </Row>
-
-          <Row className="row-endereco">
+            <Row className="row-endereco">
             <div className="sub-div-endereco">
               <h1>Cidade</h1>
               <Input className="input-endereco"/>
@@ -80,11 +84,28 @@ const PessoaFisica: React.FC = () => {
                 <h1>CEP</h1>
                 <Input className="input-cep"/>
             </div>
-          </Row>
-            <div className="sub-div-endereco">
+            <div className="sub-div-complemento">
                 <h1>Complemento</h1>
                 <Input className="input-grande"/>
             </div>
+          </Row>
+         
+                </>
+              ))
+            }
+
+        <div className="div-button-add">
+             <Button 
+                className="button-add" 
+                onClick={addItem}
+                icon={<Plus size={18} className="icon-add"/>}
+                
+                >adicionar novo endereco</Button>
+              </div> 
+          </Row>
+
+         
+            
       </Container>
     );
   }
