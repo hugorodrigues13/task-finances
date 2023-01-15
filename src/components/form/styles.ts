@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  margin-top: 30px;
 
   .row-endereco{
     margin-bottom: 30px;
@@ -21,7 +22,7 @@ export const Container = styled.div`
         flex-direction: column;
         align-items: left;
         margin-bottom: 10px;
-  }
+    }
 
   .input-grande{
     width: 63.5vh;
@@ -41,21 +42,21 @@ export const Container = styled.div`
 
   .input-endereco{
     width: 31vh;
-    margin-right: 50px;
+    margin-right: 20px;
   }
 
   .input-numero{
     width: 7vh;
-    margin-right: 50px;
+    margin-right: 20px;
   }
 
   .input-bairro{
-    width: 15.5vh;
+    width: 20.5vh;
   }
 
   .input-estado{
-    width: 10vh;
-    margin-right: 50px;
+    width: 15vh;
+    margin-right: 20px;
   }
 
   .input-cep{
@@ -92,6 +93,20 @@ export const Container = styled.div`
   color: #00C0EF;
 }
 
+.button-delete{
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  width: 60px;
+  border: none;
+  background-color: none;
+  box-shadow: none;
+  color: #B5334D;
+}
+
+
 .div-button-add{
   display: flex;
   justify-content: center;
@@ -105,7 +120,6 @@ export const Container = styled.div`
 
 .sub-div-complemento{
   margin-bottom: 10px;
-
   height: 40px;
 }
 

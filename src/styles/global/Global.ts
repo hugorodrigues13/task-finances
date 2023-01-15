@@ -176,4 +176,11 @@ export default createGlobalStyle`
 
  }
 
+ input[type='radio']{
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+      -ms-appearance: checkbox;
+          appearance: checkbox
+}
+
 `;

@@ -117,4 +117,9 @@ export const Container = styled.div`
     }
   }
 
+  .radio-select{
+    display: flex;
+    margin-bottom: 30px !important;
+  }
+
 `;

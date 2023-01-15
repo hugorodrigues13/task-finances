@@ -1,16 +1,34 @@
-import { AutoComplete, Button, Checkbox, Col, Input, Modal, Row, Select, Tooltip } from "antd";
-import React, {useEffect, useState} from "react";
-import { Article, BookOpen, ClipboardText, DownloadSimple, ListChecks, Truck, UsersFour } from 'phosphor-react';
+import { AutoComplete, Button, Checkbox, Col, Input, Modal, Radio, RadioChangeEvent, Row, Select, Tooltip } from "antd";
+import React, {ReactNode, useEffect, useState} from "react";
+import { Article, BookOpen, ClipboardText, CodesandboxLogo, DownloadSimple, ListChecks, Truck, UsersFour } from 'phosphor-react';
 import {Container} from './styles'
 import PessoaFisica from "../../../components/form/formPessoaFisica";
 import PessoaJuridica from "../../../components/form/formPessoaJuridica";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
+import type { CheckboxValueType } from 'antd/es/checkbox/Group';
 
 const { Option } = Select;
 
-const CadastrarPedido: React.FC = () => {
+interface BaseLayoutProps {
+  children?: ReactNode;
+}
+
+const CadastrarPedido: React.FC<BaseLayoutProps> = ({children}) => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
+  const [value, setValue] = useState(1);
+  const [pessoaFisica, setPessoaFisica] = useState([""])
+
+
+  const radioPF = () => {
+    setPessoaFisica([...pessoaFisica, ""])
+}
+
+  const radioChecked = (e: RadioChangeEvent) => {
+    console.log('radio checked', e.target.value);
+    setValue(e.target.value);
+    
+  };
 
   const showModal = () => {
     setOpen(true);
@@ -91,23 +109,27 @@ const CadastrarPedido: React.FC = () => {
               onCancel={handleCancel}
               okText="Salvar"
               cancelText="Cancelar"
-              
-              
             >
 
-              <Row>
-                <Checkbox
-                  onChange={onChange}
-                  defaultChecked={true}
-                  >Pessoa Física
-                </Checkbox>
-                <Checkbox 
-                  onChange={onChange}
-                  >Pessoa Jurídica
-                </Checkbox>
-              </Row>
-             
-              <PessoaFisica/>
+            <div className="radio-select">
+              <Radio.Group onChange={radioChecked} value={value}>
+                
+                      <Radio value={1} >Pessoa Física</Radio>
+                  
+                      <Radio value={2}>Pessoa Jurídica</Radio>
+              </Radio.Group>
+            </div>
+            {
+                  pessoaFisica.map((pf, index) => (
+                    <div key={index} >
+                      {
+                          value === 1 ? <PessoaFisica /> : <PessoaJuridica />
+                      }
+                      
+                    </div>
+              ))
+                  
+                }
       </Modal>
         </div> 
 

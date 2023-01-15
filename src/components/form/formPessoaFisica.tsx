@@ -10,9 +10,10 @@ import { Container } from "./styles";
 const PessoaFisica: React.FC = () => {
   const [item, setItem] = useState('');
   const [phones, setPhones] = useState([""])
+  const [endereco, setEndereco] = useState([""])
   const [escondeButton, setEscondeButton] = useState(false)
 
-  const addItem = () => {
+  const addPhone = () => {
     setPhones([...phones, ""])
 }
 
@@ -23,6 +24,15 @@ const PessoaFisica: React.FC = () => {
 
   const handleRemovePhone = (position: any) => {
     setPhones([...phones.filter((_, index) => index !== position)])
+
+  }
+  const addEndereco = () => {
+    setEndereco([...endereco, ""])
+}
+
+  const handleChangeEndereco = (e: any, index: any) => {
+       endereco[index] = e.target.value
+       setEndereco([...endereco]) 
 
   }
 
@@ -62,7 +72,7 @@ const PessoaFisica: React.FC = () => {
             <Row className="div-button-add">
              <Button 
                 className="button-add" 
-                onClick={addItem}
+                onClick={addPhone}
                 icon={<Plus size={18} className="icon-add"/>}
                 
                 >adicionar novo numero</Button>
@@ -80,31 +90,35 @@ const PessoaFisica: React.FC = () => {
 
           <Row className="row-endereco">
             {
-               phones.map((phone, index) => (
+               endereco.map((endereco, index) => (
                 <>
             <Row className="div-form">
             <Form.Item className="form-item">
-              <Col>Endereço Principal</Col>
-              <Input className="input-endereco"/>
+              <Col>{index >= 1 ? `Endereco ${index + 1}` : "Endereço principal"}</Col>
+              <Input 
+                className="input-endereco"
+                id={`endereco-${index + 1}`}
+                value={endereco}  
+                onChange = {e => handleChangeEndereco(e, index)}/>
             </Form.Item>
             </Row>
             <Row className="div-form">
             <Form.Item className="form-item">
               <Col>N°</Col>
-              <Input className="input-numero"/>
+              <Input className="input-numero"  onChange = {e => handleChangeEndereco(e, index)}/>
             </Form.Item>
             </Row>
             <Row className="div-form">
             <Form.Item className="form-item">
                 <Col>Bairro</Col>
-                <Input className="input-bairro"/>
+                <Input className="input-bairro"  onChange = {e => handleChangeEndereco(e, index)}/>
             </Form.Item>
             </Row>
             <Row className="row-endereco">
               <Row className="div-form">
               <Form.Item className="form-item">
                 <Col>Cidade</Col>
-                <Input className="input-endereco"/>
+                <Input className="input-endereco"  onChange = {e => handleChangeEndereco(e, index)}/>
               </Form.Item>
               </Row>
               <Row className="div-form">
@@ -125,11 +139,10 @@ const PessoaFisica: React.FC = () => {
               <Row className="div-form">
               <Form.Item className="form-item">
                   <Col>Complemento</Col>
-                  <Input className="input-grande"/>
+                  <Input className="input-grande" onChange = {e => handleChangeEndereco(e, index)}/>
               </Form.Item>
               </Row>
           </Row>
-         
                 </>
               ))
             }
@@ -137,7 +150,7 @@ const PessoaFisica: React.FC = () => {
         <Row className="div-button-add">
              <Button 
                 className="button-add" 
-                onClick={addItem}
+                onClick={addEndereco}
                 icon={<Plus size={18} className="icon-add"/>}
                 
                 >adicionar novo endereco</Button>
