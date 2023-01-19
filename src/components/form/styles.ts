@@ -26,41 +26,50 @@ export const Container = styled.div`
 
   .input-grande{
     width: 63.5vh;
+    height: 35px;
   }
 
   .input-medio{
     width: 20.3vh;
+    height: 35px;
   }
 
   .input-pequeno{
     width: 30%;
+    height: 35px;
   }
 
   .input-extra-pequeno {
     width: 10%;
+    height: 35px;
   }
 
   .input-endereco{
     width: 31vh;
+    height: 35px;
     margin-right: 20px;
   }
 
   .input-numero{
     width: 7vh;
+    height: 35px;
     margin-right: 20px;
   }
 
   .input-bairro{
     width: 20.5vh;
+    height: 35px;
   }
 
   .input-estado{
     width: 15vh;
+    height: 35px;
     margin-right: 20px;
   }
 
   .input-cep{
     width: 12.5vh;
+    height: 35px;
   }
 
   label{
@@ -77,6 +86,7 @@ export const Container = styled.div`
 
 .input-email{
   width: 31vh;
+  height: 35px;
 }
 
 .button-add{
@@ -132,6 +142,7 @@ export const Container = styled.div`
 
 .input-telefone{
   width: 20.3vh;
+  height: 30px;
 }
 
 .delete-phone{
@@ -141,6 +152,65 @@ export const Container = styled.div`
     color: #B5334D;
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
+  }
+}
+
+.input-mask-cnpj{
+  width: 20.5vh;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  padding-left: 10px;
+
+
+  :hover{
+    border-color: #4096FF;
+  }
+
+  :focus{
+    box-shadow: 0 0 2px 0 #4096FF;
+    outline: 0;
+    border-color: #4096FF;
+
+  }
+}
+
+.input-mask-cep{
+  width: 12.5vh;
+  height: 32.5px;
+  border: none;
+  border-radius: 4px;
+  padding-left: 10px;
+
+
+  :hover{
+    border-color: #4096FF;
+  }
+
+  :focus{
+    box-shadow: 0 0 2px 0 #4096FF;
+    outline: 0;
+    border-color: #4096FF;
+
+  }
+}
+
+.input-delete-suffix{
+  border-radius: 0px 4px 4px 0px;
+  border-left: 0;
+}
+
+.input-mask-telefone{
+  width: 16.7vh;
+  margin-top: 1.5px;
+  height: 90%;
+  transition: all 0.2s;
+  padding-left: 10px;
+  border: none;
+
+  :focus{
+    outline: 0;
   }
 }
 

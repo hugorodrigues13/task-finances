@@ -5,11 +5,14 @@ import InputMask from "../Input/Input"
 import { Option } from "antd/es/mentions";
 import { Plus, Trash, TrashSimple } from "phosphor-react";
 import React, { ReactNode, useState, useCallback, InputHTMLAttributes } from "react";
-import { cep, currency } from './masks';
 import { Container } from "./styles";
 
 interface Usuario {
   cep: string
+  telefone: string
+  cnpj: string
+  cpf: string
+  numero: number
 }
   
 const PessoaJuridica: React.FC = () => {
@@ -20,12 +23,13 @@ const PessoaJuridica: React.FC = () => {
   const [usuario, setUsuario] = useState<Usuario>({} as Usuario)
 
   const handleChange = useCallback((e: React.FormEvent<HTMLInputElement>) => {
+      
       setUsuario({
         ...usuario,
         [e.currentTarget.name]: e.currentTarget.value
       })
 
-  }, [usuario])
+  }, [usuario, phones])
 
 
   const addPhone = () => {
@@ -58,9 +62,9 @@ const PessoaJuridica: React.FC = () => {
     return (
       <Container>
           <Row className="div-form">
-            <Form.Item className="form-item" >
+            <Form.Item className="form-item">
               <Col>CNPJ</Col>
-              <InputMask className="input-medio" mask="cep" placeholder={`EX: XX.XXX.XXX/0001-XX`} name="cep" onChange={handleChange}/>
+              <InputMask className="input-mask-cnpj" mask="cnpj" placeholder={`Digite apenas números`} name="cpf" onChange={handleChange}/>
             </Form.Item>
           </Row>
           <Row className="div-form">
@@ -75,15 +79,17 @@ const PessoaJuridica: React.FC = () => {
               <Row key={index} className="div-telefone">
                 <Form.Item className="form-item">
                   <Col>{index >= 1 ?`Telefone ${index + 1}` : `Telefone`}</Col>
-                  <Input
-                    type="text"
+                  <InputMask
+                    mask="telefone"
                     id={`phone-${index + 1}`}
-                    className="input-telefone"
-                    placeholder={`EX: (XX) X XXXX-XXXX`} 
-                    value={phone} 
-                    name="phone" 
+                    className="input-mask-telefone"
+                    placeholder={`Digite apenas números`} 
+                    value={phone}
+                    name="telefone"
+                    maxLength={11}
+                    onChange = {handleChange}
                     suffix={<Tooltip title="Deletar"><TrashSimple size={16} className="delete-phone" onClick={() => {handleRemovePhone(index)}}/></Tooltip>}
-                    onChange = {e => handleChangePhone(e, index)}/>
+                    />
                   </Form.Item>
                 </Row>
               ))
@@ -125,7 +131,7 @@ const PessoaJuridica: React.FC = () => {
             <Row className="div-form">
             <Form.Item className="form-item">
               <Col>N°</Col>
-              <Input className="input-numero"  onChange = {e => handleChangeEndereco(e, index)} placeholder={`EX: 1`}/>
+              <Input className="input-numero" type="number" name="numero" onChange = {handleChange} placeholder={`Ex: 1`}/>
             </Form.Item>
             </Row>
             <Row className="div-form">
@@ -153,7 +159,7 @@ const PessoaJuridica: React.FC = () => {
               <Row className="div-form">
               <Form.Item className="form-item">
                   <Col>CEP</Col>
-                  <Input className="input-cep" placeholder={`Seu CEP`}/>
+                  <InputMask maxLength={9} className="input-mask-cep" mask="cep" placeholder={`Seu CEP`} name="cep" onChange={handleChange}/>
               </Form.Item>
               </Row>
               <Row className="div-form">

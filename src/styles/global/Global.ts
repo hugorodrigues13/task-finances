@@ -183,4 +183,8 @@ export default createGlobalStyle`
           appearance: checkbox
 }
 
+.ant-select-selector{
+  height: 35px !important;
+}
+
 `;
