@@ -1,35 +1,59 @@
 import { Button, Col, Form, Row, Select, Tooltip } from "antd";
-import FormItem from "antd/es/form/FormItem";
-import Input from "antd/es/input/Input";
-import InputMask from "../Input/Input"
-import { Option } from "antd/es/mentions";
+import InputMask from "../InputAnt/Input"
+import SelectAnt from "../SelectAnt/SelectAnt"
 import { Plus, Trash, TrashSimple } from "phosphor-react";
-import React, { ReactNode, useState, useCallback, InputHTMLAttributes } from "react";
+import React, { useState} from "react";
 import { Container } from "./styles";
 
-interface Usuario {
-  cep: string
-  telefone: string
-  cnpj: string
-  cpf: string
-  numero: number
-}
+
+// interface Endereco{
+//   id: number;
+//   endereco: string;
+//   numero: number;
+//   cidade: string;
+//   bairro: string;
+//   estado: string;
+//   cep: string;
+//   complemento: string;
+// }
+// interface Usuario {
+//   id: number;
+//   cnpj: string
+//   cpf: string
+//   razaoSocial: string;
+//   nome: string
+//   email: string;
+
+//   endereco: Endereco[]
+// }
   
 const PessoaJuridica: React.FC = () => {
-  const [item, setItem] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [cnpj, setCnpj] = useState('')
+  const [bairro, setBairro] = useState('')
+  const [razaoSocial, setRazaoSocial] = useState('')
+  const [email, setEmail] = useState('')
+  const [cep, setCep] = useState('')
   const [phones, setPhones] = useState([""])
   const [endereco, setEndereco] = useState([""])
+  // const [estado, setEstado] = useState('')
+  const [numero, setNumero] = useState('')
+  const [complemento, setComplemento] = useState('')
 
-  const [usuario, setUsuario] = useState<Usuario>({} as Usuario)
+  // const [usuario, setUsuario] = useState<Usuario>({} as Usuario)
 
-  const handleChange = useCallback((e: React.FormEvent<HTMLInputElement>) => {
+  // const handleChange = useCallback((e: React.FormEvent<HTMLInputElement>) => {
       
-      setUsuario({
-        ...usuario,
-        [e.currentTarget.name]: e.currentTarget.value
-      })
+  //     setUsuario({
+  //       ...usuario,
+  //       [e.currentTarget.name]: e.currentTarget.value
+  //     })
 
-  }, [usuario, phones])
+  // }, [usuario, phones])
+
+  // const handleSubmit = () => {
+  //   const data = {cidade, cnpj, bairro, razaoSocial, email, cep, phones, endereco, estado, numero, complemento}
+  // }
 
 
   const addPhone = () => {
@@ -63,14 +87,22 @@ const PessoaJuridica: React.FC = () => {
       <Container>
           <Row className="div-form">
             <Form.Item className="form-item">
-              <Col>CNPJ</Col>
-              <InputMask className="input-mask-cnpj" mask="cnpj" placeholder={`Digite apenas números`} name="cpf" onChange={handleChange}/>
+              <InputMask 
+                mask="cnpj" 
+                placeholder={`CNPJ`} 
+                name="cpf"
+                value={cnpj}
+                onChange={(e) => setCnpj(e.target.value)}/>
             </Form.Item>
           </Row>
           <Row className="div-form">
           <Form.Item className="form-item">
-            <Col>Razão Social</Col>
-            <Input className="input-grande" placeholder={`Nome completo da empresa`}/>
+            <InputMask 
+              className="input-grande" 
+              placeholder={`Razão Social`} 
+              name="razaoSocial"
+              value={razaoSocial}
+              onChange={(e) => setRazaoSocial(e.target.value)}/>
           </Form.Item>
           </Row>
           <Row gutter={24}>
@@ -78,16 +110,15 @@ const PessoaJuridica: React.FC = () => {
               phones.map((phone, index) => (
               <Row key={index} className="div-telefone">
                 <Form.Item className="form-item">
-                  <Col>{index >= 1 ?`Telefone ${index + 1}` : `Telefone`}</Col>
                   <InputMask
                     mask="telefone"
                     id={`phone-${index + 1}`}
                     className="input-mask-telefone"
-                    placeholder={`Digite apenas números`} 
+                    placeholder={index >= 1 ?`Telefone ${index + 1}` : `Telefone`}
                     value={phone}
                     name="telefone"
                     maxLength={11}
-                    onChange = {handleChange}
+                    onChange = {(e)  => handleChangePhone(e, index)}
                     suffix={<Tooltip title="Deletar"><TrashSimple size={16} className="delete-phone" onClick={() => {handleRemovePhone(index)}}/></Tooltip>}
                     />
                   </Form.Item>
@@ -106,8 +137,12 @@ const PessoaJuridica: React.FC = () => {
           
           <Row className="div-email">
           <Form.Item className="form-item">
-            <Col>E-mail</Col>
-            <Input className="input-grande" placeholder={`Informe o e-mail da empresa`} />
+            <InputMask
+              className="input-grande" 
+              placeholder={`E-mail`} 
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} />
           </Form.Item>
           </Row>
 
@@ -119,59 +154,77 @@ const PessoaJuridica: React.FC = () => {
                 <>
             <Row className="div-form">
             <Form.Item className="form-item">
-              <Col>{index >= 1 ? `Endereco ${index + 1}` : "Endereço principal"}</Col>
-              <Input 
+              <InputMask 
                 className="input-endereco"
                 id={`endereco-${index + 1}`}
-                placeholder={`Informe o endereço`}
+                placeholder={index >= 1 ? `Endereco ${index + 1}` : "Endereço principal"}
                 value={endereco}  
                 onChange = {e => handleChangeEndereco(e, index)}/>
             </Form.Item>
             </Row>
             <Row className="div-form">
             <Form.Item className="form-item">
-              <Col>N°</Col>
-              <Input className="input-numero" type="number" name="numero" onChange = {handleChange} placeholder={`Ex: 1`}/>
+              <InputMask 
+                className="input-numero" 
+                type="number" 
+                name="numero"
+                value={numero}
+                onChange = {(e) => setNumero(e.target.value)} 
+                placeholder={`N°`}/>
             </Form.Item>
             </Row>
             <Row className="div-form">
             <Form.Item className="form-item">
-                <Col>Bairro</Col>
-                <Input className="input-bairro"  onChange = {e => handleChangeEndereco(e, index)} placeholder={`Informe o bairro`}/>
+                <InputMask 
+                  className="input-bairro"  
+                  value={bairro}
+                  onChange = {(e) => setBairro(e.target.value)} 
+                  placeholder={`Bairro`}/>
             </Form.Item>
             </Row>
             <Row className="row-endereco">
               <Row className="div-form">
               <Form.Item className="form-item">
-                <Col>Cidade</Col>
-                <Input className="input-endereco"  onChange = {e => handleChangeEndereco(e, index)} placeholder={`Informe a cidade`}/>
+                <InputMask 
+                  className="input-endereco"  
+                  value={cidade}
+                  onChange = {(e) => setCidade(e.target.value)} 
+                  placeholder={`Cidade`}/>
               </Form.Item>
               </Row>
               <Row className="div-form">
               <Form.Item className="form-item">
-                <Col>Estado</Col>
-                <Select defaultValue="Option1" className="input-estado" >
-                  <Option value="Option1">Option1</Option>
-                  <Option value="Option2">Option2</Option>
-                </Select>
+                <SelectAnt />
+                 
               </Form.Item>
               </Row>
               <Row className="div-form">
               <Form.Item className="form-item">
-                  <Col>CEP</Col>
-                  <InputMask maxLength={9} className="input-mask-cep" mask="cep" placeholder={`Seu CEP`} name="cep" onChange={handleChange}/>
+                  <InputMask 
+                      maxLength={9} 
+                      className="input-mask-cep" 
+                      mask="cep" 
+                      placeholder={`CEP`} 
+                      name="cep"
+                      value={cep}
+                      onChange={(e) => setCep(e.target.value)}/>
               </Form.Item>
               </Row>
               <Row className="div-form">
               <Form.Item className="form-item">
-                  <Col>Complemento</Col>
-                  <Input className="input-grande" onChange = {e => handleChangeEndereco(e, index)} placeholder={`EX: APT, CASA, N°, PRÓXIMO A...`}/>
+                  <InputMask 
+                    className="input-grande"
+                    value={complemento}
+                    onChange={(e) => setComplemento(e.target.value)}
+                    placeholder={`Complemento`}/>
               </Form.Item>
               </Row>
           </Row>
                 </>
               ))
             }
+
+          {/*----------------------------- BOTOES ADD AND DELETE ----------------------------------- */}
 
         <Row className="div-button-add">
              <Button 
@@ -191,7 +244,7 @@ const PessoaJuridica: React.FC = () => {
               </Row> 
           </Row>
 
-          <Button onClick={() => console.log(usuario)}>Testando</Button>
+          {/* <Button onClick={() => centerconsole.log(usuario)}>Testando</Button> */}
             
       </Container>
     );

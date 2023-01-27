@@ -1,0 +1,40 @@
+.suffix{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 0;
+  background-color: transparent;
+  border: none;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.div-group-input{
+  display: flex;
+  border: none;
+}
+
+input{
+  display: flex;
+  border: none;
+  font-size: 15px;
+  border-bottom: solid 1px #112D92;
+  height: 40px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+input:hover{
+  border-color: #4096FF;
+}
+
+input:focus{
+  background-color: #EBEFFF;
+  outline: 0;
+
+}
+
+input::placeholder{
+  color: #112D92;
+  font-size: 15px;
+}

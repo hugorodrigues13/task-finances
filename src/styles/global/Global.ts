@@ -4,7 +4,8 @@ export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;font-family: 'Poppins', sans-serif !important;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
   };
 
   html, body {
@@ -131,7 +132,7 @@ export default createGlobalStyle`
   margin-top: 50px;
   width: 140px;
   justify-content: center;
-  background-color: #388862;
+  background-color: #112D92;
  }
 
  .ant-btn-default{
@@ -154,6 +155,7 @@ export default createGlobalStyle`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #112D92 !important;
   font-size: 20px !important;
   margin-bottom: 20px !important;
  }
@@ -181,10 +183,6 @@ export default createGlobalStyle`
      -moz-appearance: checkbox;
       -ms-appearance: checkbox;
           appearance: checkbox
-}
-
-.ant-select-selector{
-  height: 35px !important;
 }
 
 `;

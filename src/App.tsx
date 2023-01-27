@@ -1,5 +1,3 @@
-import React from 'react';
-import Auth from './pages/Auth/'
 import Routes from './routes';
 import GlobalStyles from './styles/global/Global';
 

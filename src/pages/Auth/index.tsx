@@ -1,6 +1,6 @@
 import { Container, Box } from './styles';
 import { EnvelopeSimple, Lock } from 'phosphor-react';
-import { Button, Image, Input } from 'antd';
+import { Button, Input } from 'antd';
 // const {Logo} = require("../../assets/logo.svg")
 import Logo from '../../@types/assets/logo.svg'
 

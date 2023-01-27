@@ -1,17 +1,14 @@
 import { Button, Col, Form, Row, Select, Tooltip } from "antd";
-import FormItem from "antd/es/form/FormItem";
 import Input from "antd/es/input/Input";
 import { Option } from "antd/es/mentions";
-import { Plus, Trash, TrashSimple } from "phosphor-react";
-import React, { ReactNode, useState } from "react";
+import { Plus, TrashSimple } from "phosphor-react";
+import React, {  useState } from "react";
 import { Container } from "./styles";
 
   
 const PessoaFisica: React.FC = () => {
-  const [item, setItem] = useState('');
   const [phones, setPhones] = useState([""])
   const [endereco, setEndereco] = useState([""])
-  const [escondeButton, setEscondeButton] = useState(false)
 
   const addPhone = () => {
     setPhones([...phones, ""])

@@ -1,8 +1,7 @@
 
 import { Layout, Menu, MenuProps } from 'antd';
-import React, {ReactNode, useEffect, useState } from 'react';
+import React, {ReactNode, useState } from 'react';
 import { Container } from './styles';
-import ContentProps from '../Vendas';
 import Logo from '../../@types/assets/logoDashboard.png'
 import Logo2 from '../../@types/assets/semfundo.png';
 import { Link } from 'react-router-dom';

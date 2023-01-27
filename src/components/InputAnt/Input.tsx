@@ -1,9 +1,8 @@
-import React, { ReactNode, useState, useCallback, InputHTMLAttributes } from "react";
-import { cep, currency, cnpj, cpf, telefone } from '../../components//form/masks';
-import { Container } from "../form/styles";
+import React, { useCallback, InputHTMLAttributes } from "react";
+import { cep, currency, cnpj, cpf, telefone } from '../form/masks';
 import './styles.css'
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
-  mask: "cep" | "currency" | "cnpj" | "cpf" | "telefone"
+  mask?: "cep" | "currency" | "cnpj" | "cpf" | "telefone"
   prefix?: string
   suffix?: string | any
 
