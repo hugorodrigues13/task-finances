@@ -2,10 +2,10 @@
 import { Layout, Menu, MenuProps } from 'antd';
 import React, {ReactNode, useState } from 'react';
 import { Container } from './styles';
-import Logo from '../../@types/assets/logoDashboard.png'
-import Logo2 from '../../@types/assets/semfundo.png';
+import Logo from '../../@types/assets/oficial.png'
+import Logo2 from '../../@types/assets/favicon.png';
 import { Link } from 'react-router-dom';
-import { Bank, House, Tag, TextIndent, TextOutdent, UsersFour } from 'phosphor-react';
+import { Bank, BookOpen, Handshake, House, ListChecks, Money, Tag, TextIndent, TextOutdent, UserList, UserPlus, Users, UsersFour } from 'phosphor-react';
 const { Header, Sider, Content } = Layout;
 
 
@@ -38,17 +38,17 @@ const Home: React.FC<BaseLayoutProps> = ({children}) => {
     
     getItem(<Link to="/">Painel</Link>,'1', <House size={22}/>),
     getItem('Vendas', 'sub1', <Tag size={22}/>, [
-      getItem(<Link to="/novoPedido">Novo pedido</Link>, '3'),
-      getItem(<Link to="/clientes">Clientes</Link>, '4'),
-      getItem(<Link to="/pedidos">Pedidos</Link>, '5'),
+      getItem(<Link to="/novoPedido">Novo pedido</Link>, '3', <ListChecks size={18} />),
+      getItem(<Link to="/clientes">Clientes</Link>, '4', <Users size={18}/>),
+      getItem(<Link to="/pedidos">Pedidos</Link>, '5', <BookOpen size={18} />),
     ]),
     getItem('Financeiro', 'sub2', <Bank size={22}/>, [
-      getItem('Contas a pagar', '6'), 
-      getItem('Contas a receber', '7'),
+      getItem('Contas a pagar', '6', <Money size={18}/>), 
+      getItem('Contas a receber', '7', <Handshake size={18}/>),
     ]),
     getItem('Departamento', '9', <UsersFour size={22}/>, [
-      getItem('Usuários cadastrados', '10'),
-      getItem('Cadastrar usuário', '11'),
+      getItem('Usuários', '10', <UserList size={18}/>),
+      getItem('Cadastrar', '11', <UserPlus size={18}/>),
     ]),
   ];
 

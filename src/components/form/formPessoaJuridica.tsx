@@ -1,4 +1,4 @@
-import { Button, Col, Form, Row, Select, Tooltip } from "antd";
+import { Button, Form, Row, Tooltip } from "antd";
 import InputMask from "../InputAnt/Input"
 import SelectAnt from "../SelectAnt/SelectAnt"
 import { Plus, Trash, TrashSimple } from "phosphor-react";
