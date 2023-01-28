@@ -15,12 +15,12 @@ export const Container = styled.div`
   .button-importar {
     background-color: transparent;
     border: none;
-    background-color: #388862;
+    background-color: #0e8744;
     color: #fff;
     margin-top: 0 !important;
 
     :hover{
-      background-color: #788681;
+      background-color: #152252;
       color: #fff;
       border-color: #000;
     }
@@ -30,15 +30,15 @@ export const Container = styled.div`
   .title{
     font-size: 22px;
     margin-bottom: 40px;
-    color: #B5334D;
+    color: #152252;
   }
 
   .icons-top{
-    color: #B5334D;
+    color: #152252;
     cursor: pointer;
 
     :hover{
-      color: #788681;
+      color: #152252;
         transition: 0.5 ease-out;
     }
 
@@ -47,7 +47,7 @@ export const Container = styled.div`
   .row-client{
     border-bottom: 1px solid;
     width: 100%;
-    color: #788681;
+    color: #152252;
     
   }
 
@@ -59,7 +59,7 @@ export const Container = styled.div`
     margin-top: 100px;
     border-bottom: 1px solid;
     width: 100%;
-    color: #788681;
+    color: #152252;
     
   }
   .column-div{
@@ -80,24 +80,24 @@ export const Container = styled.div`
   .icons{
     width: 51px;
     height: 61px;
-    color: #CC3333;
+    color: #152252;
   }
 
   h1{
     font-size: 20px;
     margin: 0 10px 0 10px;
-    color: #CC3333;
+    color: #152252;
   }
 
   .button-red{
     margin-top: 10px;
     width: 120px;
     border-radius: 12px;
-    background-color: #388862;
+    background-color: #0e8744;
     color: #fff;
 
     :hover{
-      background-color: #788681;
+      background-color: #152252;
       color: #fff;
       border-color: #000;
     }
@@ -107,14 +107,20 @@ export const Container = styled.div`
     margin-top: 10px;
     width: 120px;
     border-radius: 12px;
-    background-color: #388862;
+    background-color: #0e8744;
     color: #fff;
 
     :hover{
-      background-color: #788681;
+      background-color: #152252;
       color: #fff;
       border-color: #000;
     }
+  }
+
+  .radio-select{
+    display: flex;
+    margin-bottom: 30px !important;
+
   }
 
 `;

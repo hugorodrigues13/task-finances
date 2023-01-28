@@ -1,6 +1,5 @@
 import * as React from 'react'
 import {Routes, Route} from 'react-router-dom'
-import Dashboard from '../pages/Dashboard';
 import Layout from '../components/layout';
 import Vendas from '../pages/Vendas';
 import CadastrarPedido from '../pages/Vendas/cadastrarPedido';

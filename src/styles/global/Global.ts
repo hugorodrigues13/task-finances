@@ -4,7 +4,8 @@ export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;font-family: 'Poppins', sans-serif !important;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
   };
 
   html, body {
@@ -39,12 +40,12 @@ export default createGlobalStyle`
   }
 
   .ant-layout-header{
-    background-color: #B5334D !important;
+    background-color: #000 !important;
   }
 
   /* Menu lateral aberto */
  .ant-layout-sider{
-    background-color: #B5334D !important;
+    background-color: #112D92 !important;
     flex: 0 0 250px !important;
     max-width: 300px !important;
   }
@@ -56,15 +57,15 @@ export default createGlobalStyle`
   }
 
   .ant-menu-inline{
-    background-color: #B5334D !important;
+    background-color: #112D92 !important;
   }
 
   .ant-menu-inline-collapsed{
-    background-color: #B5334D !important;
+    background-color: #112D92 !important;
   }
 
  .ant-menu-item-selected {
-  background-color: #662a34 !important;
+  background-color: #152252 !important;
   color: #fff !important;
  }
 
@@ -80,7 +81,7 @@ export default createGlobalStyle`
 
  .ant-menu{
   color: #fff;
-  background-color: #B5334D !important;
+  background-color: #112D92 !important;
   font-weight: 400;
   font-size: 16px;
   
@@ -131,7 +132,7 @@ export default createGlobalStyle`
   margin-top: 50px;
   width: 140px;
   justify-content: center;
-  background-color: #B5334D;
+  background-color: #112D92;
  }
 
  .ant-btn-default{
@@ -154,6 +155,7 @@ export default createGlobalStyle`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #112D92 !important;
   font-size: 20px !important;
   margin-bottom: 20px !important;
  }
@@ -175,5 +177,12 @@ export default createGlobalStyle`
     padding-right: 12vh;
 
  }
+
+ input[type='radio']{
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+      -ms-appearance: checkbox;
+          appearance: checkbox
+}
 
 `;

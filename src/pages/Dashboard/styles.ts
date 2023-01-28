@@ -14,30 +14,34 @@ export const Container = styled.body`
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
+    background-color: #000;
     margin-top: -15px;
     border-bottom: 1px solid #fff;
   }
   .logo-dash-principal{
     display: flex;
-    margin-top: 10px;
-    width: 130px;
-    height: 50px;
+    width: 160px;
+    margin-top: 20px;
+    height: 60px;
    
   }
 
   .div-logo-mini{
     display: flex;
-    width: 80px;
-    height: 50px;
+    width: 100%;
+    height: 63.5px;
     margin-bottom: 40px;
+    background-color: #000 ;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
   }
 
   .logo-dash-mini{
     display: flex;
-    width: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 50px;
     height: 40px;
   }
 
@@ -47,7 +51,6 @@ export const Container = styled.body`
 
   .layout{
     display: flex;
-    background-color: red;
   }
 
   .trigger{
