@@ -10,19 +10,15 @@ export const Container = styled.body`
 
   .div-logo{
     display: flex;
-    height: 80px;
     margin-bottom: 40px;
     justify-content: center;
     align-items: center;
-    /* background-color: #112D92; */
-    margin-top: -15px;
     border-bottom: 1px solid #fff;
   }
   .logo-dash-principal{
     display: flex;
     width: 140px;
-    margin-top: 14px;
-    height: 60px;
+    height: 63px;
    
   }
 

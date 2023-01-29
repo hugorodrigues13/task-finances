@@ -43,6 +43,7 @@ export default createGlobalStyle`
     color: #1B4861 !important;
     padding-left: 10px !important;
     background-color: #eee !important;
+    border-bottom: 1px solid #1B4861;
   }
 
   /* Menu lateral aberto */
