@@ -2,7 +2,7 @@
 import { Layout, Menu, MenuProps } from 'antd';
 import React, {ReactNode, useState } from 'react';
 import { Container } from './styles';
-import Logo from '../../@types/assets/oficial.png'
+import Logo from '../../@types/assets/green.png'
 import Logo2 from '../../@types/assets/favicon.png';
 import { Link } from 'react-router-dom';
 import { Bank, BookOpen, Handshake, House, ListChecks, Money, Tag, TextIndent, TextOutdent, UserList, UserPlus, Users, UsersFour } from 'phosphor-react';
