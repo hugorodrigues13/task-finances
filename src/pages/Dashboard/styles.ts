@@ -46,6 +46,7 @@ export const Container = styled.body`
 
   .layout{
     display: flex;
+    height: 100vh;
   }
 
   .trigger{

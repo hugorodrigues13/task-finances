@@ -2,9 +2,9 @@ import * as React from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Layout from '../components/layout';
 import Vendas from '../pages/Vendas';
-import CadastrarPedido from '../pages/Vendas/cadastrarPedido';
+import CadastrarPedido from '../pages/Vendas/pedidos';
 import Clientes from '../pages/Vendas/cliente';
-import Pedidos from '../pages/Vendas/pedidos';
+import Pedidos from '../pages/Vendas/produtos';
 
 function RoutesLayout() {
     return (

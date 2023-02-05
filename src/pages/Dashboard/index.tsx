@@ -86,7 +86,6 @@ const Home: React.FC<BaseLayoutProps> = ({children}) => {
         <Content
           className="site-layout-background"
           style={{
-            height: '88.6vh',
             margin: '24px 16px',
             padding: 24,
           }}>
