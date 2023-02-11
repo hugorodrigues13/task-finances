@@ -16,24 +16,6 @@ export default createGlobalStyle`
     
   };
 
-  html {
-    @media(max-width: 1000px) {
-      font-size: 93.75%;
-    }
-    @media(max-width: 720px) {
-      font-size: 87.5%; 
-    }
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif !important;
-  }
-
-
-  h1, h2, h3, h4, h5, h6, strong {
-    font-weight: 600;
-    
-  }
 
   button {
     cursor: pointer;
