@@ -10,19 +10,15 @@ export const Container = styled.body`
 
   .div-logo{
     display: flex;
-    height: 80px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     justify-content: center;
     align-items: center;
-    background-color: #000;
-    margin-top: -15px;
     border-bottom: 1px solid #fff;
   }
   .logo-dash-principal{
     display: flex;
-    width: 160px;
-    margin-top: 20px;
-    height: 60px;
+    width: 140px;
+    height: 63px;
    
   }
 
@@ -30,8 +26,7 @@ export const Container = styled.body`
     display: flex;
     width: 100%;
     height: 63.5px;
-    margin-bottom: 40px;
-    background-color: #000 ;
+     margin-bottom: 40px;
     justify-content: center;
     align-items: center;
   }
@@ -51,6 +46,7 @@ export const Container = styled.body`
 
   .layout{
     display: flex;
+    height: 100vh;
   }
 
   .trigger{

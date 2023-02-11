@@ -15,12 +15,12 @@ export const Container = styled.div`
   .button-importar {
     background-color: transparent;
     border: none;
-    background-color: #0e8744;
+    background-color: #17c69b;
     color: #fff;
     margin-top: 0 !important;
 
     :hover{
-      background-color: #152252;
+      background-color: #2A6266;
       color: #fff;
       border-color: #000;
     }
@@ -38,7 +38,7 @@ export const Container = styled.div`
     cursor: pointer;
 
     :hover{
-      color: #152252;
+      color: #2A6266;
         transition: 0.5 ease-out;
     }
 
@@ -93,13 +93,13 @@ export const Container = styled.div`
     margin-top: 10px;
     width: 120px;
     border-radius: 12px;
-    background-color: #0e8744;
+    background-color: #17c69b;
     color: #fff;
 
     :hover{
-      background-color: #152252;
+      background-color: #2A6266;
       color: #fff;
-      border-color: #000;
+      border: none;
     }
   }
 
@@ -107,13 +107,13 @@ export const Container = styled.div`
     margin-top: 10px;
     width: 120px;
     border-radius: 12px;
-    background-color: #0e8744;
+    background-color: #17c69b;
     color: #fff;
 
     :hover{
-      background-color: #152252;
+      background-color: #2A6266;
       color: #fff;
-      border-color: #000;
+      border: none;
     }
   }
 

@@ -18,7 +18,7 @@ input{
   display: flex;
   border: none;
   font-size: 15px;
-  border-bottom: solid 1px #112D92;
+  border-bottom: solid 1px #1B4861;
   height: 40px;
   margin-left: 5px;
   margin-bottom: 10px;
@@ -35,6 +35,6 @@ input:focus{
 }
 
 input::placeholder{
-  color: #112D92;
+  color: #1B4861;
   font-size: 15px;
 }

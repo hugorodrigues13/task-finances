@@ -11,27 +11,11 @@ export default createGlobalStyle`
   html, body {
     width: 100%;
     height: 100vh;
+
+    font-family: 'Poppins', sans-serif !important;
     
   };
 
-  html {
-    @media(max-width: 1000px) {
-      font-size: 93.75%;
-    }
-    @media(max-width: 720px) {
-      font-size: 87.5%; 
-    }
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif !important;
-  }
-
-
-  h1, h2, h3, h4, h5, h6, strong {
-    font-weight: 600;
-    
-  }
 
   button {
     cursor: pointer;
@@ -40,14 +24,25 @@ export default createGlobalStyle`
   }
 
   .ant-layout-header{
-    background-color: #000 !important;
+    color: #1B4861 !important;
+    padding-left: 10px !important;
+    background-color: #eee !important;
+    border-bottom: 1px solid #1B4861;
   }
 
   /* Menu lateral aberto */
  .ant-layout-sider{
-    background-color: #112D92 !important;
+    background-color: #1B4861 !important;
     flex: 0 0 250px !important;
     max-width: 300px !important;
+  }
+
+  .ant-layout-content{
+    background-color: #eee;
+  }
+
+  .ant-layout{
+    background-color: #eee;
   }
 
    /* Menu lateral fechado */
@@ -57,15 +52,15 @@ export default createGlobalStyle`
   }
 
   .ant-menu-inline{
-    background-color: #112D92 !important;
+    background-color: #1B4861 !important;
   }
 
   .ant-menu-inline-collapsed{
-    background-color: #112D92 !important;
+    background-color: #1B4861 !important;
   }
 
  .ant-menu-item-selected {
-  background-color: #152252 !important;
+  background-color: #2A6266 !important;
   color: #fff !important;
  }
 
@@ -81,7 +76,7 @@ export default createGlobalStyle`
 
  .ant-menu{
   color: #fff;
-  background-color: #112D92 !important;
+  background-color: #1B4861 !important;
   font-weight: 400;
   font-size: 16px;
   
@@ -132,7 +127,7 @@ export default createGlobalStyle`
   margin-top: 50px;
   width: 140px;
   justify-content: center;
-  background-color: #112D92;
+  background-color: #1B4861;
  }
 
  .ant-btn-default{
@@ -155,7 +150,7 @@ export default createGlobalStyle`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #112D92 !important;
+  color: #1B4861 !important;
   font-size: 20px !important;
   margin-bottom: 20px !important;
  }
