@@ -38,9 +38,9 @@ const Home: React.FC<BaseLayoutProps> = ({children}) => {
     
     getItem(<Link to="/">Painel</Link>,'1', <House size={22}/>),
     getItem('Vendas', 'sub1', <Tag size={22}/>, [
-      getItem(<Link to="/novoPedido">Novo pedido</Link>, '3', <ListChecks size={18} />),
+      getItem(<Link to="/pedidos">Pedidos</Link>, '3', <ListChecks size={18} />),
       getItem(<Link to="/clientes">Clientes</Link>, '4', <Users size={18}/>),
-      getItem(<Link to="/pedidos">Pedidos</Link>, '5', <BookOpen size={18} />),
+      getItem(<Link to="/produtos">Produtos</Link>, '5', <BookOpen size={18} />),
     ]),
     getItem('Financeiro', 'sub2', <Bank size={22}/>, [
       getItem('Contas a pagar', '6', <Money size={18}/>), 

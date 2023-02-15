@@ -4,6 +4,7 @@ import { BookOpen, ClipboardText, ListChecks, Truck, UsersFour } from 'phosphor-
 import {Container} from './styles'
 import PessoaFisica from "../../../components/form/formPessoaFisica";
 import PessoaJuridica from "../../../components/form/formPessoaJuridica";
+import Tabela from "./table/tabela"
 
 interface BaseLayoutProps {
   children?: ReactNode;
@@ -169,7 +170,7 @@ const CadastrarPedido: React.FC<BaseLayoutProps> = ({children}) => {
               <Input.Group compact>
                   <AutoComplete
                     className="input-pedido"
-                    style={{ width: '800px' }}
+                    style={{ width: '400px' }}
                     placeholder="Digite o código ou nome do produto"
                     options={[{ value: 'text 1' }, { value: 'text 2' }]}
                   />
@@ -183,7 +184,11 @@ const CadastrarPedido: React.FC<BaseLayoutProps> = ({children}) => {
                 >
               Novo Produto
             </Button>
-        </div>    
+        </div>
+
+        <Tabela/>
+
+
       </Container>
     );
   }
