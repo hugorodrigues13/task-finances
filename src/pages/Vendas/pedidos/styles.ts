@@ -53,6 +53,7 @@ export const Container = styled.div`
   }
 
   .input-pedido{
+    width: 40vh;
     border: 1px solid;
   }
 

@@ -97,7 +97,6 @@ const CadastrarPedido: React.FC<BaseLayoutProps> = ({children}) => {
               <Input.Group compact>
                   <AutoComplete
                     className="input-pedido"
-                    style={{ width: '800px' }}
                     placeholder="Digite o nome ou o CNPJ / CPF do cliente"
                     options={[{ value: 'text 1' }, { value: 'text 2' }]}
                   />
@@ -170,7 +169,6 @@ const CadastrarPedido: React.FC<BaseLayoutProps> = ({children}) => {
               <Input.Group compact>
                   <AutoComplete
                     className="input-pedido"
-                    style={{ width: '400px' }}
                     placeholder="Digite o código ou nome do produto"
                     options={[{ value: 'text 1' }, { value: 'text 2' }]}
                   />
