@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
-  height: 600px;
+  max-height: 100%;
+  max-width: 100%;
   padding: 0 0 20px 20px;
 
 
@@ -52,6 +53,7 @@ export const Container = styled.div`
   }
 
   .input-pedido{
+    width: 40vh;
     border: 1px solid;
   }
 

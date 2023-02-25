@@ -180,4 +180,39 @@ export default createGlobalStyle`
           appearance: checkbox
 }
 
+.ant-table{
+}
+
+.ant-table-tbody{
+  height: 10px !important;
+}
+
+
+
+
+
+.ant-table-cell{
+  margin: 0 !important;
+  padding: 0 !important;
+  padding: 0 10px 0 10px !important;
+  height: 10px !important;
+}
+
+.ant-checkbox-wrapper{
+  height: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.ant-checkbox{
+  height: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.ant-checkbox-input{
+  height: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 `;
