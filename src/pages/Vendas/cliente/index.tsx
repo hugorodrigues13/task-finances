@@ -1,4 +1,5 @@
 import { Col, Row } from "antd";
+import { CalendarBlank, CalendarPlus, Handshake, SelectionBackground, ThumbsDown, ThumbsUp } from "phosphor-react";
 import React from "react";
 import {Container} from "./styles"
 
@@ -6,40 +7,47 @@ import {Container} from "./styles"
 const Cliente: React.FC = () => {
     return (
       <Container>
-        <Row className="retangulo">
-            
-        </Row>
+        <Row gutter={24}>
+        <div>
         <Col className="quadrado">
-            
-          </Col>
+          <CalendarBlank size={32} className="icons"/>
+        </Col>
+          <Row className="retangulo">
+              
+          </Row>
+          
+        </div>
 
-        <Row className="retangulo">
-            
-        </Row>
-        <Col className="quadrado">
-            
+        <div>
+        <Col className="quadrado2">
+        <Handshake size={32} className="icons"/>
             </Col>
-
         <Row className="retangulo">
-           
-        </Row>
-          <Col className="quadrado">
             
+        </Row>
+      
+        </div>
+
+        <div>
+          <Col className="quadrado3">
+          <CalendarPlus size={32} className="icons" />
           </Col>
-
-        <Row className="retangulo">
+          <Row className="retangulo">
             
-        </Row>
-          <Col className="quadrado">
-            
-          </Col>
+          </Row>
+          
+        </div>
 
-        <Row className="retangulo">
-
-        </Row>
-            <Col className="quadrado">
-            
+        <div>
+            <Col className="quadrado4">
+            <ThumbsDown size={32} className="icons"/>
             </Col>
+          <Row className="retangulo">
+
+          </Row>
+              
+        </div>
+        </Row>
       </Container>
     );
   }
