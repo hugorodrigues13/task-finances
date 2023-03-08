@@ -4,7 +4,7 @@ import { BookOpen, ClipboardText, ListChecks, Truck, UsersFour } from 'phosphor-
 import {Container} from './styles'
 import PessoaFisica from "../../../components/form/formPessoaFisica";
 import PessoaJuridica from "../../../components/form/formPessoaJuridica";
-import Tabela from "./table/tabela"
+import Tabela from "../../../components/table/tabela"
 
 interface BaseLayoutProps {
   children?: ReactNode;
