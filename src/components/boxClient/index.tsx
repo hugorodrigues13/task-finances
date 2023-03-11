@@ -15,7 +15,7 @@ const BoxAll: React.FC = () => {
               
               <Row className="retangulo">
                 <p className="title">A Receber Hoje</p>
-                <div className="preco">R$ 50000,00</div>
+                <div className="preco">R$ 5000,00</div>
               </Row>
             
             </div>
