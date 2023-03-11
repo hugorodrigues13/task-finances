@@ -75,7 +75,7 @@ const Tabela: React.FC = () => {
 
   return (
     <Container>
-      <div className="ant-table-div" style={{ marginBottom: 16 }}>
+      <Row gutter={24} className="ant-table-div" style={{ marginBottom: 16 }}>
         
         <Button className='btn-icons-table-visualizar'>
         <Eye size={28} />
@@ -93,7 +93,7 @@ const Tabela: React.FC = () => {
         <Trash size={28}/>
         </Button>
        
-      </div>
+      </Row>
       <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
       <Row className='selected-items' gutter={24}>
           <span>
