@@ -150,7 +150,7 @@ export default createGlobalStyle`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #1B4861 !important;
+  color: #112D92 !important;
   font-size: 20px !important;
   margin-bottom: 20px !important;
  }
