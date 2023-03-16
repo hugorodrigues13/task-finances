@@ -167,7 +167,7 @@ const PessoaJuridica: React.FC = () => {
                 className="descricao"
                 onChange={(e) => setValue(e.target.value)}
                 placeholder="Descreva as informações adicionais deste produto"
-                autoSize={{ minRows: 5, maxRows: 5 }}
+                autoSize={{ minRows: 3, maxRows: 4 }}
               />
             </Form.Item>
           </Row>
