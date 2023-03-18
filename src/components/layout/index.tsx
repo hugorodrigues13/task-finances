@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 
 import Dashboard from '../../pages/Dashboard'
+import Auth from '../../pages/Auth'
 
 interface BaseLayoutProps {
     children?: ReactNode;
@@ -9,9 +10,9 @@ interface BaseLayoutProps {
 const Layout: React.FC<BaseLayoutProps> = ({children}) => {
     return (
         <>
-            <Dashboard>
+            <Auth>
                 {children}
-            </Dashboard>
+            </Auth>
             
         </> 
     );

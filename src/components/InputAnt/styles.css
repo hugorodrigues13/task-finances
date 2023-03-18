@@ -27,7 +27,7 @@
   border: none;
 }
 
-input{
+.div-group-input input{
   display: flex;
   border: none;
   font-size: 15px;
@@ -37,17 +37,17 @@ input{
   margin-bottom: 10px;
 }
 
-input:hover{
+.div-group-input input:hover{
   border-color: #4096FF;
 }
 
-input:focus{
+.div-group-input input:focus{
   background-color: #EBEFFF;
   outline: 0;
 
 }
 
-input::placeholder{
+.div-group-input input::placeholder{
   color: #112D92;
   font-size: 15px;
 }
