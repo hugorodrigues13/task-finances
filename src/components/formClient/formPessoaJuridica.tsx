@@ -1,6 +1,6 @@
 import { Button, Form, Row, Tooltip } from "antd";
-import InputMask from "../InputAnt/Input"
-import SelectAnt from "../SelectAnt/SelectAnt"
+import InputMask from "../inputAnt/inputAnt"
+import SelectAnt from "../selectAnt/selectAnt"
 import { Plus, Trash, TrashSimple } from "phosphor-react";
 import React, { useState} from "react";
 import { Container } from "./styles";

@@ -1,9 +1,9 @@
 import React, { useCallback, InputHTMLAttributes } from "react";
-import { cep, currency, cnpj, cpf, telefone } from '../form/masks';
+import { cep, currency, cnpj, cpf, telefone } from '../formClient/masks';
 import './styles.css'
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
   mask?: "cep" | "currency" | "cnpj" | "cpf" | "telefone"
-  prefix?: string
+  prefix?: string | any
   suffix?: string | any
 
 }
@@ -28,7 +28,7 @@ const handleKeyUp = useCallback((e: React.FormEvent<HTMLInputElement>) => {
 
   return (
     <div className="div-group-input">
-      {prefix && <span>{prefix}</span>}
+      {prefix && <span className="prefix">{prefix}</span>}
       <input {...props} onKeyUp={handleKeyUp}/>
       {suffix && <span className="suffix">{suffix}</span>}
     </div>

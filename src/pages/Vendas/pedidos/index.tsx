@@ -2,9 +2,11 @@ import { AutoComplete, Button, Col, Input, Modal, Radio, RadioChangeEvent, Row, 
 import React, {ReactNode, useState} from "react";
 import { BookOpen, ClipboardText, ListChecks, Truck, UsersFour } from 'phosphor-react';
 import {Container} from './styles'
-import PessoaFisica from "../../../components/form/formPessoaFisica";
-import PessoaJuridica from "../../../components/form/formPessoaJuridica";
-import Tabela from "../../../components/table/tabela"
+import PessoaFisica from "../../../components/formClient/formPessoaFisica";
+import PessoaJuridica from "../../../components/formClient/formPessoaJuridica";
+import Produto from "../../../components/formProduto/formProduto";
+import Tabela from "../../../components/table/tabela";
+import UploadAnt from "../../../components/upload/upload";
 
 interface BaseLayoutProps {
   children?: ReactNode;
@@ -145,19 +147,8 @@ const CadastrarPedido: React.FC<BaseLayoutProps> = ({children}) => {
               okText="Salvar"
               cancelText="Cancelar"
             >
-
-            <div className="radio-select">
-              <Radio.Group onChange={radioChecked} value={value}>
-                
-                      <Radio value={1} className="radio-title">Pessoa Física</Radio>
-                  
-                      <Radio value={2} className="radio-title">Pessoa Jurídica</Radio>
-              </Radio.Group>
-            </div>
          
-                      {
-                          value === 1 ? <PessoaFisica /> : <PessoaJuridica />
-                      }
+            <Produto /> 
              
       </Modal>
         </div> 

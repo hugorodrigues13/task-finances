@@ -1,32 +1,50 @@
-import { Container, Box } from './styles';
-import { EnvelopeSimple, Lock } from 'phosphor-react';
-import { Button, Input } from 'antd';
-// const {Logo} = require("../../assets/logo.svg")
-import Logo from '../../@types/assets/logo.svg'
 
-const Auth = () => {
+import React, {ReactNode, useState } from 'react';
+import { Container } from './styles';
+import { EnvelopeSimple, Lock, LockKey } from 'phosphor-react';
+import { Button, Input } from 'antd';
+import "./auth.css";
+// const {Logo} = require("../../assets/logo.svg")
+import Logo from '../../@types/assets/favicon.png'
+
+interface BaseLayoutProps {
+  children?: ReactNode;
+}
+
+const Auth: React.FC<BaseLayoutProps> = ({children}) => {
   return (
     <>
       <Container>
-        <Box>
-        <img src={Logo} alt=""  height={50} width={140}/>
-          <p className="title">Faça login e comece a usar!</p>
-          <p className="email">Endereço de e-mail</p>
-          <Input
-            className="textfield"
-            type="text"
-            prefix={<EnvelopeSimple size={22} />}
-            placeholder="Digite seu e-mail"
-          />
-          <p className="senha">Sua senha</p>
-          <Input
-            className="textfield"
-            type="password"
-            prefix={<Lock size={22} />}
-            placeholder="Digite sua senha"
-          />
-          <Button className="signin-button">Entrar</Button>
-        </Box>
+      <header className="section">
+        <div className="form-box">
+          <div className="form-value">
+            <form action="">
+              <div className="logo">
+              <img src="/logo.png" alt="Logo" />
+                <h2>Login</h2>
+              </div>
+                <div className="inputbox">
+                <EnvelopeSimple className="icons-login"/>
+                  <input type="text" required></input>
+                  <label >Email</label>
+                </div>
+                <div className="inputbox">
+                <LockKey className="icons-login"/>
+                  <input type="password" required></input>
+                  <label >Senha</label>
+                </div>
+                <div className="forget">
+                    <label ><input type="checkbox"></input> Lembrar senha? <a href="#">Esqueci a senha</a></label>
+                    
+                </div>
+                <button>Entrar</button>
+                <div className="register">
+                  <p>Não tem uma conta? <a href="#">Registrar</a></p>
+                </div>
+            </form>
+          </div>
+        </div>
+      </header>
       </Container>
     </>
   );
