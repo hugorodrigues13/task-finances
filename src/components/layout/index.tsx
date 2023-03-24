@@ -10,9 +10,10 @@ interface BaseLayoutProps {
 const Layout: React.FC<BaseLayoutProps> = ({children}) => {
     return (
         <>
-            <Auth>
+            <Dashboard>
                 {children}
-            </Auth>
+            </Dashboard>
+
             
         </> 
     );
